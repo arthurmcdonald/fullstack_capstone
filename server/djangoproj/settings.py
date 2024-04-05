@@ -28,12 +28,12 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-allowed_hosts_value = "https://arthuramcdon-8000.theianext-1-" +
-                      "labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+allowed_hosts_value = ("https://arthuramcdon-8000.theianext-1-labs" +
+                       "-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai")
 ALLOWED_HOSTS = ['localhost', allowed_hosts_value]
 
-trusted_origins_value = "https://arthuramcdon-8000.theianext-1-labs" +
-                        "-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+trusted_origins_value = ("https://arthuramcdon-8000.theianext-1-labs" +
+                         "-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai")
 CSRF_TRUSTED_ORIGINS = [trusted_origins_value]
 
 REST_FRAMEWORK = {
