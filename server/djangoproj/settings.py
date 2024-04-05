@@ -28,10 +28,13 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# pylint: disable-next=global-statement
-ALLOWED_HOSTS = ['localhost', 'https://arthuramcdon-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
-# pylint: disable-next=global-statement
-CSRF_TRUSTED_ORIGINS = ['https://arthuramcdon-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+allowed_hosts_value = "https://arthuramcdon-8000.theianext-1-" +
+                      "labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+ALLOWED_HOSTS = ['localhost', allowed_hosts_value]
+
+trusted_origins_value = "https://arthuramcdon-8000.theianext-1-labs" +
+                        "-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+CSRF_TRUSTED_ORIGINS = [trusted_origins_value]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -93,10 +96,12 @@ DATABASES = {
     }
 }
 
+temp = "django.contrib.auth.password_" +
+       "validation.UserAttributeSimilarityValidator"
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        temp,
     },
     {
         'NAME':
@@ -145,4 +150,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-
